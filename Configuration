@@ -1,0 +1,95 @@
+This is for a normal webpack/babel setup & not a dev server setup. Create a subdirectory for it...
+
+There are 4 fundamentals we need:  
+1- react 
+2- react-dom
+3- Babel 
+4- Webpack
+
+> npm init -y
+> npm install react react-dom
+> npm install --save-dev webpack webpack-dev-server html-webpack-plugin @babel/core babel-loader @babel/preset-env @babel/preset-react
+> Create "src" directory & in it files as index.html, index.js & webpack.config.js in root/base directory
+> Include template code for html, index.js as react-boilerplate & webpack.config.js as the presets for entrypoint, bundler in babel & webpack suchas sass or other plugins
+> Finally Scripts to execute the project
+    > "scripts": {
+        "start": "webpack-dev-server --open", OR "webpack serve --open" for newer versions
+        "build": "webpack"
+        },
+        
+> If you need any additional configurations or plugins in future, just add them to package.json as Babel-presets & plugins....
+        
+> It takes just a few seconds to compile react projects from basic configuration like this contrary to the create-react-app which is only good when starting out as a novice..
+
+$ Code for Basic Babel/webpack configuration: (webpack.config.js)
+
+    const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  // the output bundle won't be optimized for production but suitable for development
+  mode: 'development',
+  // the app entry point is /src/index.js
+  entry: path.resolve(__dirname, 'src', 'index.js'),
+  output: {
+  	// the output of the webpack build will be in /dist directory
+    path: path.resolve(__dirname, 'dist'),
+    // the filename of the JS bundle will be bundle.js
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+      	// for any file with a suffix of js or jsx
+        test: /\.jsx?$/,
+        // ignore transpiling JavaScript from node_modules as it should be that state
+        exclude: /node_modules/,
+        // use the babel-loader for transpiling JavaScript to a suitable format
+        loader: 'babel-loader',
+        options: {
+          // attach the presets to the loader (most projects use .babelrc file instead)
+          presets: ["@babel/preset-env", "@babel/preset-react"]
+        }
+      }
+    ]
+  },
+  // add a custom index.html as the template
+  plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'index.html') })]
+};
+
+# To-do:
+
+ > Push Initial project to Github repo & then subdirectories after Successful completion
+ > Add existing project in a subdirectory to test the compilation times 
+    > Porting/Moving large project here on a basic webpack/bable boilerplate improves compilation & loading times significantly (Successful Testing)
+ 
+ 
+ -------------------------------------
+ > Deploy projects to Firebase & Netlify with proper builds to Test Deployment
+    > https://medium.com/@julienrioux/deploy-react-js-app-on-firebase-c7fa6ddc153f
+    
+ > Basic React setup with Babel & Webpack (easy to understand ) 
+    > https://medium.com/swlh/back-to-basics-how-to-set-up-a-react-app-from-scratch-2020-134908e17490
+ > Serve using SSR
+    > https://javascript.plainenglish.io/back-to-basics-server-side-rendering-a-react-app-using-express-js-6fab99db5770
+ > Serve using CSR 
+    > https://javascript.plainenglish.io/back-to-basics-client-side-rendering-a-react-app-using-express-js-c828e3664b88
+    
+    https://medium.com/the-internal-startup/how-to-set-up-your-own-paas-within-hours-83356523413d
+    https://ludwig-leplan.medium.com/how-to-create-an-api-in-15-minutes-with-nodejs-and-loopback4-130aaaee772d
+    https://www.youtube.com/watch?v=InoAIgBZIEA
+    https://www.youtube.com/playlist?list=PLFsAA7EWSBTIL1A_7VaadWieIEgi_dUmU    (Wp development with vue laravel etc)
+    
+    https://rossbulat.medium.com/typescript-live-chat-react-and-socket-io-with-rxjs-event-handling-c80b1c661762
+    
+    Wordpress Themes & stuff-----> 
+    https://www.youtube.com/playlist?list=PL0n7RWI41OyFJiWQ9K_ZuJW1J3TeYE-Pg  (Headless wp with react/vue/angular)
+    https://www.youtube.com/playlist?list=PL0n7RWI41OyGlUfWtJN0PSRPCbkgjxoCV    (Wp for CLients playlist )
+    https://www.youtube.com/watch?v=jOo2Fe38Xuc ( Add public apis data in wordpress ) 
+    https://youtu.be/LWM41Rcao3s (Api data in wp db & display)
+    https://www.youtube.com/watch?v=D5BcyVA7WZE ( Wp Data base tour)
+    
+    Gridsome is Vuejs equiavalent for Gatsby in React
+    https://www.youtube.com/watch?v=vy39yigro_8 (Gridsome & Wp) 
+    https://kinsta.com/blog/gatsby-wordpress/ ( Gatsby & Wp ) 
+    Note: Advanced things like elemontor layout from WP can also be used in Gatsby/Gridsome Frontend    
