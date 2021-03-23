@@ -79,17 +79,4 @@ module.exports = {
     https://ludwig-leplan.medium.com/how-to-create-an-api-in-15-minutes-with-nodejs-and-loopback4-130aaaee772d
     https://www.youtube.com/watch?v=InoAIgBZIEA
     https://www.youtube.com/playlist?list=PLFsAA7EWSBTIL1A_7VaadWieIEgi_dUmU    (Wp development with vue laravel etc)
-    
-    https://rossbulat.medium.com/typescript-live-chat-react-and-socket-io-with-rxjs-event-handling-c80b1c661762
-    
-    Wordpress Themes & stuff-----> 
-    https://www.youtube.com/playlist?list=PL0n7RWI41OyFJiWQ9K_ZuJW1J3TeYE-Pg  (Headless wp with react/vue/angular)
-    https://www.youtube.com/playlist?list=PL0n7RWI41OyGlUfWtJN0PSRPCbkgjxoCV    (Wp for CLients playlist )
-    https://www.youtube.com/watch?v=jOo2Fe38Xuc ( Add public apis data in wordpress ) 
-    https://youtu.be/LWM41Rcao3s (Api data in wp db & display)
-    https://www.youtube.com/watch?v=D5BcyVA7WZE ( Wp Data base tour)
-    
-    Gridsome is Vuejs equiavalent for Gatsby in React
-    https://www.youtube.com/watch?v=vy39yigro_8 (Gridsome & Wp) 
-    https://kinsta.com/blog/gatsby-wordpress/ ( Gatsby & Wp ) 
-    Note: Advanced things like elemontor layout from WP can also be used in Gatsby/Gridsome Frontend    
+
